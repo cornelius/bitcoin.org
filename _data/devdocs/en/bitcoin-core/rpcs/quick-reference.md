@@ -18,9 +18,8 @@ Use v0.n.n in abbreviation title to prevent autocrossrefing.
 
 <!-- Deprecated -->
 {% assign DEPRECATED='**<abbr title="Deprecated; will be removed in a future version of Bitcoin Core">Deprecated</abbr>**' %}
-
 <!-- Bitcoin Core 0.14.1 April 2017 -->
-{% assign UPDATED0_14_0='**<abbr title="Updated in Bitcoin Core v0.14.1">Updated in 0.14.1</abbr>**' %}
+{% assign UPDATED0_14_1='**<abbr title="Updated in Bitcoin Core v0.14.1">Updated in 0.14.1</abbr>**' %}
 
 <!-- Bitcoin Core 0.14.0 March 2017 -->
 {% assign NEW0_14_0='**<abbr title="New in Bitcoin Core v0.14.0">New in 0.14.0</abbr>**' %}
@@ -50,7 +49,7 @@ Use v0.n.n in abbreviation title to prevent autocrossrefing.
      _includes/rpc/getbestblockhash.md and run `make manual-update-summaries`. -->
 {% include helpers/summaries.md %}
 
-#### Block Chain RPCs
+#### Blockchain RPCs
 {:.no_toc}
 <!-- no subhead-links here -->
 
@@ -62,11 +61,13 @@ Use v0.n.n in abbreviation title to prevent autocrossrefing.
 * [GetBlockCount][rpc getblockcount]: {{summary_getBlockCount}}
 * [GetBlockHash][rpc getblockhash]: {{summary_getBlockHash}}
 * [GetBlockHeader][rpc getblockheader]: {{summary_getBlockHeader}} {{NEW0_12_0}}
+* [GetBlockStats][rpc getblockstats]: {{summary_getBlockStats}}
 * [GetChainTips][rpc getchaintips]: {{summary_getChainTips}}
-* [GetDifficulty][rpc getdifficulty]: {{summary_getDifficultly}}
+* [GetChainTxStats][rpc getchaintxstats]: {{summary_getChainTxStats}}
+* [GetDifficulty][rpc getdifficulty]: {{summary_getDifficulty}}
 * [GetMemPoolAncestors][rpc getmempoolancestors]: {{summary_getMemPoolAncestors}} {{NEW0_13_0}}
 * [GetMemPoolDescendants][rpc getmempooldescendants]: {{summary_getMemPoolDescendants}} {{NEW0_13_0}}
-* [GetMemPoolEntry][rpc  getmempoolentry]: {{summary_getMemPoolEntry}} {{NEW0_13_0}}
+* [GetMemPoolEntry][rpc getmempoolentry]: {{summary_getMemPoolEntry}} {{NEW0_13_0}}
 * [GetMemPoolInfo][rpc getmempoolinfo]: {{summary_getMemPoolInfo}} {{UPDATED0_12_0}}
 * [GetRawMemPool][rpc getrawmempool]: {{summary_getRawMemPool}} {{UPDATED0_13_0}}
 * [GetTxOut][rpc gettxout]: {{summary_getTxOut}}
@@ -74,6 +75,8 @@ Use v0.n.n in abbreviation title to prevent autocrossrefing.
 * [GetTxOutSetInfo][rpc gettxoutsetinfo]: {{summary_getTxOutSetInfo}}
 * [PreciousBlock][rpc preciousblock]: {{summary_preciousBlock}} {{NEW0_14_0}}
 * [PruneBlockChain][rpc pruneblockchain]: {{summary_pruneBlockChain}} {{NEW0_14_0}}
+* [SaveMemPool][rpc savemempool]: {{summary_saveMemPool}}
+* [ScanTxOutSet][rpc scantxoutset]: {{summary_scanTxOutSet}}
 * [VerifyChain][rpc verifychain]: {{summary_verifyChain}}
 * [VerifyTxOutProof][rpc verifytxoutproof]: {{summary_verifyTxOutProof}} {{NEW0_11_0}}
 
@@ -85,9 +88,11 @@ Use v0.n.n in abbreviation title to prevent autocrossrefing.
 
 {% autocrossref %}
 
-* [GetInfo][rpc getinfo]: {{summary_getInfo}} {{DEPRECATED}}
+* [GetMemoryInfo][rpc getmemoryinfo]: {{summary_getMemoryInfo}} {{NEW0_14_0}}
 * [Help][rpc help]: {{summary_help}}
+* [Logging][rpc logging]: {{summary_logging}}
 * [Stop][rpc stop]: {{summary_stop}}
+* [Uptime][rpc uptime]: {{summary_uptime}}
 
 {% endautocrossref %}
 
@@ -110,7 +115,7 @@ Use v0.n.n in abbreviation title to prevent autocrossrefing.
 
 * [GetBlockTemplate][rpc getblocktemplate]: {{summary_getBlockTemplate}}
 * [GetMiningInfo][rpc getmininginfo]: {{summary_getMiningInfo}} {{UPDATED0_14_0}}
-* [GetNetworkHashPS][rpc getnetworkhashps]: {{summary_getNetworkHashPS}}
+* [GetNetworkHashPs][rpc getnetworkhashps]: {{summary_getNetworkHashPs}}
 * [PrioritiseTransaction][rpc prioritisetransaction]: {{summary_prioritiseTransaction}}
 * [SubmitBlock][rpc submitblock]: {{summary_submitBlock}}
 
@@ -124,45 +129,52 @@ Use v0.n.n in abbreviation title to prevent autocrossrefing.
 
 * [AddNode][rpc addnode]: {{summary_addNode}} {{UPDATED0_14_0}}
 * [ClearBanned][rpc clearbanned]: {{summary_clearBanned}} {{NEW0_12_0}}
-* [DisconnectNode][rpc disconnectnode]: {{summary_disconnectNode}} {{NEW0_12_0}} {{UPDATED0_14_1}}
+* [DisconnectNode][rpc disconnectnode]: {{summary_disconnectNode}} {{NEW0_12_0}}, {{UPDATED0_14_1}}
 * [GetAddedNodeInfo][rpc getaddednodeinfo]: {{summary_getAddedNodeInfo}} {{UPDATED0_14_0}}
 * [GetConnectionCount][rpc getconnectioncount]: {{summary_getConnectionCount}}
 * [GetNetTotals][rpc getnettotals]: {{summary_getNetTotals}} {{UPDATED0_12_0}}
 * [GetNetworkInfo][rpc getnetworkinfo]: {{summary_getNetworkInfo}} {{UPDATED0_13_0}}
 * [GetPeerInfo][rpc getpeerinfo]: {{summary_getPeerInfo}} {{UPDATED0_13_0}}
 * [ListBanned][rpc listbanned]: {{summary_listBanned}} {{NEW0_12_0}}
-* [Ping][rpc ping]: {{summary_ping-rpc}}
+* [Ping][rpc ping]: {{summary_ping}}
 * [SetBan][rpc setban]: {{summary_setBan}} {{NEW0_12_0}}
 * [SetNetworkActive][rpc setnetworkactive]: {{summary_setNetworkActive}} {{NEW0_14_0}}
 
 {% endautocrossref %}
 
-#### Raw Transaction RPCs
+#### Rawtransactions RPCs
 {:.no_toc}
 <!-- no subhead-links here -->
 
 {% autocrossref %}
 
+* [CombinePsbt][rpc combinepsbt]: {{summary_combinePsbt}}
+* [CombineRawTransaction][rpc combinerawtransaction]: {{summary_combineRawTransaction}}
+* [ConvertToPsbt][rpc converttopsbt]: {{summary_convertToPsbt}}
+* [CreatePsbt][rpc createpsbt]: {{summary_createPsbt}}
 * [CreateRawTransaction][rpc createrawtransaction]: {{summary_createRawTransaction}} {{UPDATED0_14_1}}
-* [FundRawTransaction][rpc fundrawtransaction]: {{summary_fundRawTransaction}} {{NEW0_12_0}}, {{UPDATED0_14_0}}
+* [DecodePsbt][rpc decodepsbt]: {{summary_decodePsbt}}
 * [DecodeRawTransaction][rpc decoderawtransaction]: {{summary_decodeRawTransaction}} {{UPDATED0_13_0}}
 * [DecodeScript][rpc decodescript]: {{summary_decodeScript}}
+* [FinalizePsbt][rpc finalizepsbt]: {{summary_finalizePsbt}}
+* [FundRawTransaction][rpc fundrawtransaction]: {{summary_fundRawTransaction}} {{NEW0_12_0}}, {{UPDATED0_14_0}}
 * [GetRawTransaction][rpc getrawtransaction]: {{summary_getRawTransaction}} {{UPDATED0_14_0}}
 * [SendRawTransaction][rpc sendrawtransaction]: {{summary_sendRawTransaction}}
 * [SignRawTransaction][rpc signrawtransaction]: {{summary_signRawTransaction}}
+* [SignRawTransactionWithKey][rpc signrawtransactionwithkey]: {{summary_signRawTransactionWithKey}}
+* [TestmemPoolAccept][rpc testmempoolaccept]: {{summary_testmemPoolAccept}}
 
 {% endautocrossref %}
 
-#### Utility RPCs
+#### Util RPCs
 {:.no_toc}
 <!-- no subhead-links here -->
 
 {% autocrossref %}
 
 * [CreateMultiSig][rpc createmultisig]: {{summary_createMultiSig}}
-* [EstimateFee][rpc estimatefee]: {{summary_estimateFee}} {{UPDATED0_14_0}}{{DEPRECATED}}
-* [EstimatePriority][rpc estimatepriority]: {{summary_estimatePriority}} {{DEPRECATED}}
-* [GetMemoryInfo][rpc getmemoryinfo]: {{summary_getMemoryInfo}} {{NEW_14_0}}
+* [EstimateSmartFee][rpc estimatesmartfee]: {{summary_estimateSmartFee}}
+* [SignMessageWithPrivKey][rpc signmessagewithprivkey]: {{summary_signMessageWithPrivKey}} {{NEW0_13_0}}
 * [ValidateAddress][rpc validateaddress]: {{summary_validateAddress}} {{UPDATED0_13_0}}
 * [VerifyMessage][rpc verifymessage]: {{summary_verifyMessage}}
 
@@ -179,16 +191,19 @@ with [wallet support][]{:#term-wallet-support}{:.term}, which is the
 default.
 
 * [AbandonTransaction][rpc abandontransaction]: {{summary_abandonTransaction}} {{NEW0_12_0}}
-* [AddWitnessAddress][rpc addwitnessaddress]: {{summary_addWitnessAddress}} {{NEW0_13_0}}
+* [AbortRescan][rpc abortrescan]: {{summary_abortRescan}}
 * [AddMultiSigAddress][rpc addmultisigaddress]: {{summary_addMultiSigAddress}}
 * [BackupWallet][rpc backupwallet]: {{summary_backupWallet}}
 * [BumpFee][rpc bumpfee]: {{summary_bumpFee}} {{NEW0_14_0}}
+* [CreateWallet][rpc createwallet]: {{summary_createWallet}}
 * [DumpPrivKey][rpc dumpprivkey]: {{summary_dumpPrivKey}}
 * [DumpWallet][rpc dumpwallet]: {{summary_dumpWallet}}
 * [EncryptWallet][rpc encryptwallet]: {{summary_encryptWallet}}
-* [GetAccountAddress][rpc getaccountaddress]: {{summary_getAccountAddress}} {{DEPRECATED}}
 * [GetAccount][rpc getaccount]: {{summary_getAccount}}
-* [GetAddressesByAccount][rpc getaddressesbyaccount]: {{summary_getAddressesByAccount}} {{DEPRECATED}}
+* [GetAccountAddress][rpc getaccountaddress]: {{summary_getAccountAddress}} {{DEPRECATED}}
+* [GetAddressByAccount][rpc getaddressbyaccount]: {{summary_getAddressByAccount}} {{DEPRECATED}}
+* [GetAddressesByLabel][rpc getaddressesbylabel]: {{summary_getAddressesByLabel}}
+* [GetAddressInfo][rpc getaddressinfo]: {{summary_getAddressInfo}}
 * [GetBalance][rpc getbalance]: {{summary_getBalance}}
 * [GetNewAddress][rpc getnewaddress]: {{summary_getNewAddress}}
 * [GetRawChangeAddress][rpc getrawchangeaddress]: {{summary_getRawChangeAddress}}
@@ -199,43 +214,40 @@ default.
 * [GetWalletInfo][rpc getwalletinfo]: {{summary_getWalletInfo}}
 * [ImportAddress][rpc importaddress]: {{summary_importAddress}}
 * [ImportMulti][rpc importmulti]: {{summary_importMulti}} {{NEW0_14_0}}
-* [ImportPrunedFunds][rpc importprunedfunds]: {{summary_importPrunedFunds}} {{NEW0_13_0}}
 * [ImportPrivKey][rpc importprivkey]: {{summary_importPrivKey}}
+* [ImportPrunedFunds][rpc importprunedfunds]: {{summary_importPrunedFunds}} {{NEW0_13_0}}
+* [ImportPubKey][rpc importpubkey]: {{summary_importPubKey}}
 * [ImportWallet][rpc importwallet]: {{summary_importWallet}}
 * [KeyPoolRefill][rpc keypoolrefill]: {{summary_keyPoolRefill}}
 * [ListAccounts][rpc listaccounts]: {{summary_listAccounts}} {{DEPRECATED}}
 * [ListAddressGroupings][rpc listaddressgroupings]: {{summary_listAddressGroupings}}
+* [ListLabels][rpc listlabels]: {{summary_listLabels}}
 * [ListLockUnspent][rpc listlockunspent]: {{summary_listLockUnspent}}
 * [ListReceivedByAccount][rpc listreceivedbyaccount]: {{summary_listReceivedByAccount}} {{DEPRECATED}}
 * [ListReceivedByAddress][rpc listreceivedbyaddress]: {{summary_listReceivedByAddress}}
 * [ListSinceBlock][rpc listsinceblock]: {{summary_listSinceBlock}}
 * [ListTransactions][rpc listtransactions]: {{summary_listTransactions}} {{UPDATED0_12_1}}
 * [ListUnspent][rpc listunspent]: {{summary_listUnspent}} {{UPDATED0_13_0}}
+* [ListWallets][rpc listwallets]: {{summary_listWallets}}
+* [LoadWallet][rpc loadwallet]: {{summary_loadWallet}}
 * [LockUnspent][rpc lockunspent]: {{summary_lockUnspent}}
 * [Move][rpc move]: {{summary_move}} {{DEPRECATED}}
 * [RemovePrunedFunds][rpc removeprunedfunds]: {{summary_removePrunedFunds}} {{NEW0_13_0}}
+* [RescanBlockChain][rpc rescanblockchain]: {{summary_rescanBlockChain}}
 * [SendFrom][rpc sendfrom]: {{summary_sendFrom}} {{DEPRECATED}}
 * [SendMany][rpc sendmany]: {{summary_sendMany}}
 * [SendToAddress][rpc sendtoaddress]: {{summary_sendToAddress}}
 * [SetAccount][rpc setaccount]: {{summary_setAccount}} {{DEPRECATED}}
+* [SetHdSeed][rpc sethdseed]: {{summary_setHdSeed}}
 * [SetTxFee][rpc settxfee]: {{summary_setTxFee}}
-* [SignMessage][rpc signmessage]: {{summary_signMessage}} 
-* [SignMessageWithPrivKey][rpc signmessagewithprivkey]: {{summary_signMessageWithPrivKey}}  {{NEW0_13_0}}
+* [SignMessage][rpc signmessage]: {{summary_signMessage}}
+* [SignRawTransactionWithWallet][rpc signrawtransactionwithwallet]: {{summary_signRawTransactionWithWallet}}
+* [UnloadWallet][rpc unloadwallet]: {{summary_unloadWallet}}
+* [WalletCreatefundedPsbt][rpc walletcreatefundedpsbt]: {{summary_walletCreatefundedPsbt}}
 * [WalletLock][rpc walletlock]: {{summary_walletLock}}
 * [WalletPassphrase][rpc walletpassphrase]: {{summary_walletPassphrase}}
 * [WalletPassphraseChange][rpc walletpassphrasechange]: {{summary_walletPassphraseChange}}
+* [WalletProcessPsbt][rpc walletprocesspsbt]: {{summary_walletProcessPsbt}}
 
 {% endautocrossref %}
 
-#### Removed RPCs
-{:.no_toc}
-<!-- no subhead-links here -->
-
-{% autocrossref %}
-
-* [GetGenerate][rpc getgenerate]: {{summary_getGenerate}}
-* [GetHashesPerSec][rpc gethashespersec]: {{summary_getHashesPerSec}}
-* [GetWork][rpc getwork]: {{summary_getWork}}
-* [SetGenerate][rpc setgenerate]: {{summary_setGenerate}}
-
-{% endautocrossref %}

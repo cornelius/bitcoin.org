@@ -7,64 +7,46 @@ http://opensource.org/licenses/MIT.
 ##### Generate
 {% include helpers/subhead-links.md %}
 
-{% assign summary_generate="nearly instantly generates blocks." %}
+{% assign summary_generate="mine up to nblocks blocks immediately (before the RPC call returns) to an address in the wallet." %}
 
 {% autocrossref %}
 
-*Requires wallet support.*
+*Added in Bitcoin Core 0.11.0*
 
 The `generate` RPC {{summary_generate}}
 
-*Parameter #1---the number of blocks to generate*
+*Parameter #1---nblocks*
 
 {% itemplate ntpd1 %}
-- n: "Blocks"
+- n: "nblocks"
   t: "number (int)"
   p: "Required<br>(exactly 1)"
-  d: "The number of blocks to generate.  The RPC call will not return until all blocks have been generated or the maxium number of iterations has been reached"
-  
+  d: "How many blocks are generated immediately."
+
 {% enditemplate %}
 
-*Parameter #2---the maximum number of iterations to try*
+*Parameter #2---maxtries*
 
 {% itemplate ntpd1 %}
-- n: "Maxtries"
+- n: "maxtries"
   t: "number (int)"
-  p: "Optional<br>(0 or 1)"
-  d: "The maximum number of iterations that are tried to create the requested number of blocks. Default is `1000000`"
+  p: "Optional"
+  d: "How many iterations to try (default = 1000000)."
 
 {% enditemplate %}
 
-*Result---the generated block header hashes*
+*Result*
 
-{% itemplate ntpd1 %}
-- n: "`result`"
-  t: "array"
-  p: "Required<br>(exactly 1)"
-  d: "An array containing the block header hashes of the generated blocks (may be empty if used with `generate 0`)"
+{% endautocrossref %}
 
-- n: "→<br>Header Hashes"
-  t: "string (hex)"
-  p: "Required<br>(1 or more)"
-  d: "The hashes of the headers of the blocks generated in regtest mode, as hex in RPC byte order"
-{% enditemplate %}
+    [ blockhashes ]     (array) hashes of blocks generated
+    
+    Examples:
+    
+    Generate 11 blocks
+    > bitcoin-cli generate 11
 
-*Example from Bitcoin Core 0.13.1*
-
-Using regtest mode (also works in normal mode), generate 2 blocks:
-
-{% highlight bash %}
-bitcoin-cli -regtest generate 2 500000
-{% endhighlight %}
-
-Result:
-
-{% highlight json %}
-[
-    "36252b5852a5921bdfca8701f936b39edeb1f8c39fffe73b0d8437921401f9af",
-    "5f2956817db1e386759aa5794285977c70596b39ea093b9eab0aa4ba8cd50c06"
-]
-{% endhighlight %}
+{% autocrossref %}
 
 *See also*
 

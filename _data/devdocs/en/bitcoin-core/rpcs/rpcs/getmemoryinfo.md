@@ -7,7 +7,7 @@ http://opensource.org/licenses/MIT.
 ##### GetMemoryInfo
 {% include helpers/subhead-links.md %}
 
-{% assign summary_getMemoryInfo="returns information about memory usage." %}
+{% assign summary_getMemoryInfo="returns an object containing information about memory usage." %}
 
 {% autocrossref %}
 
@@ -17,71 +17,35 @@ The `getmemoryinfo` RPC {{summary_getMemoryInfo}}
 
 *Parameters: none*
 
-*Result---information about memory usage*
+*Result---(mode "stats")*
 
-{% itemplate ntpd1 %}
-- n: "`result`"
-  t: "object"
-  p: "Required<br>(exactly 1)"
-  d: "An object containing information about memory usage"
+{% endautocrossref %}
 
-- n: "→<br>`locked`"
-  t: "string : object"
-  p: "Required<br>(exactly 1)"
-  d: "An object containing information about locked memory manager" 
-  
-- n: "→→<br>`used`"
-  t: "number (int)"
-  p: "Required<br>(exactly 1)"
-  d: "Number of bytes used"
+    {
+      "locked": {               (json object) Information about locked memory manager
+        "used": xxxxx,          (numeric) Number of bytes used
+        "free": xxxxx,          (numeric) Number of bytes available in current arenas
+        "total": xxxxxxx,       (numeric) Total number of bytes managed
+        "locked": xxxxxx,       (numeric) Amount of bytes that succeeded locking. If this number is smaller than total, locking pages failed at some point and key data could be swapped to disk.
+        "chunks_used": xxxxx,   (numeric) Number allocated chunks
+        "chunks_free": xxxxx,   (numeric) Number unused chunks
+      }
+    }
 
-- n: "→→<br>`free`"
-  t: "number (int)"
-  p: "Required<br>(exactly 1)"
-  d: "Number of bytes available in current arenas"
+{% autocrossref %}
 
-- n: "→→<br>`total`"
-  t: "number (int)"
-  p: "Required<br>(exactly 1)"
-  d: "Total number of bytes managed"
+*Result---(mode "mallocinfo")*
 
-- n: "→→<br>`locked`"
-  t: "number (int)"
-  p: "Required<br>(exactly 1)"
-  d: "Amount of bytes that succeeded locking"
+{% endautocrossref %}
 
-- n: "→→<br>`chunks_used`"
-  t: "number (int)"
-  p: "Required<br>(exactly 1)"
-  d: "Number allocated chunks"
+    "<malloc version="1">..."
 
-- n: "→→<br>`chunks_free`"
-  t: "number (int)"
-  p: "Required<br>(exactly 1)"
-  d: "Number unused chunks"
-  
-{% enditemplate %}
+{% autocrossref %}
 
-*Example from Bitcoin Core 0.14.1*
+*Example*
 
 {% highlight bash %}
 bitcoin-cli getmemoryinfo
-{% endhighlight %}
-
-Result:
-
-{% highlight json %}
-{
-  "locked": {
-    "used": 0,
-    "free": 65536,
-    "total": 65536,
-    "locked": 65536,
-    "chunks_used": 0,
-    "chunks_free": 1
-  }
-}
-
 {% endhighlight %}
 
 *See also*
