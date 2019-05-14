@@ -104,7 +104,7 @@ http://opensource.org/licenses/MIT.
 * [GetNodeAddresses][rpc getnodeaddresses]: {{summary_getNodeAddresses}}
 * [GetPeerInfo][rpc getpeerinfo]: {{summary_getPeerInfo}}
 * [ListBanned][rpc listbanned]: {{summary_listBanned}}
-* [Ping][rpc ping]: {{summary_ping}}
+* [Ping][rpc ping]: {{summary_ping-rpc}}
 * [SetBan][rpc setban]: {{summary_setBan}}
 * [SetNetworkActive][rpc setnetworkactive]: {{summary_setNetworkActive}}
 

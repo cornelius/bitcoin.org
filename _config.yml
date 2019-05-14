@@ -431,7 +431,7 @@ devsearches:
     - 'LoadWallet': "/en/developer-reference#loadwallet"
     - 'LockUnspent': "/en/developer-reference#lockunspent"
     - 'Logging': "/en/developer-reference#logging"
-    - 'Ping': "/en/developer-reference#ping"
+    - 'Ping': "/en/developer-reference#ping-rpc"
     - 'PreciousBlock': "/en/developer-reference#preciousblock"
     - 'PrioritiseTransaction': "/en/developer-reference#prioritisetransaction"
     - 'PruneBlockChain': "/en/developer-reference#pruneblockchain"

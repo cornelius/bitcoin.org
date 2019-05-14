@@ -92,7 +92,7 @@ This file is licensed under the terms of its source texts{%endcomment%}
 {% assign summary_loadWallet="loads a wallet from a wallet file or directory." %}
 {% assign summary_lockUnspent="updates list of temporarily unspendable outputs." %}
 {% assign summary_logging="gets and sets the logging configuration." %}
-{% assign summary_ping="requests that a ping be sent to all other nodes, to measure ping time." %}
+{% assign summary_ping-rpc="requests that a ping be sent to all other nodes, to measure ping time." %}
 {% assign summary_preciousBlock="treats a block as if it were received before others with the same work." %}
 {% assign summary_prioritiseTransaction="accepts the transaction into mined blocks at a higher (or lower) priority." %}
 {% assign summary_pruneBlockChain="does PruneBlockChain." %}

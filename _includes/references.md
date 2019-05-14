@@ -164,7 +164,7 @@ http://opensource.org/licenses/MIT.
 [rpc loadwallet]: /en/developer-reference#loadwallet
 [rpc lockunspent]: /en/developer-reference#lockunspent
 [rpc logging]: /en/developer-reference#logging
-[rpc ping]: /en/developer-reference#ping
+[rpc ping]: /en/developer-reference#ping-rpc
 [rpc preciousblock]: /en/developer-reference#preciousblock
 [rpc prioritisetransaction]: /en/developer-reference#prioritisetransaction
 [rpc pruneblockchain]: /en/developer-reference#pruneblockchain

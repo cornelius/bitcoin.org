@@ -17,10 +17,14 @@ It returns data needed to construct a block to work on.
 
 For full specification, see BIPs 22, 23, 9, and 145:
 
+{% endautocrossref %}
+
     https://github.com/bitcoin/bips/blob/master/bip-0022.mediawiki
     https://github.com/bitcoin/bips/blob/master/bip-0023.mediawiki
     https://github.com/bitcoin/bips/blob/master/bip-0009.mediawiki#getblocktemplate_changes
     https://github.com/bitcoin/bips/blob/master/bip-0145.mediawiki
+
+{% autocrossref %}
 
 *Parameter #1---template_request*
 

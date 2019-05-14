@@ -15,7 +15,7 @@ http://opensource.org/licenses/MIT.
 
 The `getblockheader` RPC {{summary_getBlockHeader}}
 
-If verbose is true, returns an Object with information about blockheader <hash>.
+If verbose is true, returns an Object with information about blockheader 'hash'.
 
 *Parameter #1---blockhash*
 

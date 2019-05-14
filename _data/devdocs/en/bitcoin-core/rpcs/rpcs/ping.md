@@ -4,14 +4,14 @@ http://opensource.org/licenses/MIT.
 {% endcomment %}
 {% assign filename="_data/devdocs/en/bitcoin-core/rpcs/rpcs/ping.md" %}
 
-##### Ping
+##### Ping {#ping-rpc}
 {% include helpers/subhead-links.md %}
 
-{% assign summary_ping="requests that a ping be sent to all other nodes, to measure ping time." %}
+{% assign summary_ping-rpc="requests that a ping be sent to all other nodes, to measure ping time." %}
 
 {% autocrossref %}
 
-The `ping` RPC {{summary_ping}}
+The `ping` RPC {{summary_ping-rpc}}
 
 Results provided in getpeerinfo, pingtime and pingwait fields are decimal seconds.
 
